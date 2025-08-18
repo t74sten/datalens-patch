@@ -9,7 +9,7 @@ ui customize for datalens
   - - ./docker_build/run-project-bake dl_control_api --set "dl_control_api.tags=datalens-control-api:local"
   - - ./docker_build/run-project-bake dl_data_api --set "dl_data_api.tags=datalens-data-api:local"
 - - Build datalens-ui + datalens-ui-api
-  - - docker build .
+  - - docker build -t tpz_datalens-ui .
 - - Build datalens-us
   - - docker build -t tpz_datalens-us .
 - - Build datalens-auth
