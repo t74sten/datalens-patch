@@ -1,6 +1,9 @@
 # datalens-patch
 ui customize for datalens
 
+- Клонировать datalens-patch
+- Перейти в datalens-patch
+- Клоинровать остальные сервисы datalens в datalens-patch
 
 ## 01. Override assets, logo and styles
 
