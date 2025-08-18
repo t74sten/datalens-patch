@@ -5,8 +5,17 @@ ui customize for datalens
 - Перейти в datalens-patch
 - Клоинровать остальные сервисы datalens в datalens-patch
 - - Build datalens-backend
-  - ./docker_build/run-project-bake dl_control_api --set "dl_control_api.tags=datalens-control-api:local"
-  - ./docker_build/run-project-bake dl_data_api --set "dl_data_api.tags=datalens-data-api:local"
+  - - ./docker_build/run-project-bake dl_control_api --set "dl_control_api.tags=datalens-control-api:local"
+  - - ./docker_build/run-project-bake dl_data_api --set "dl_data_api.tags=datalens-data-api:local"
+- - Build datalens-ui + datalens-ui-api
+  - - docker build .
+- - Build datalens-us
+  - - docker build -t tpz_datalens-us .
+- - Build datalens-auth
+  - - docker build -t tpz_datalens-auth .
+- - Build datalens-meta-manager
+  - - docker build -t tpz_datalens-meta-manager .
+
 
 ## 01. Override assets, logo and styles
 
