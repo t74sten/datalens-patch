@@ -131,7 +131,7 @@ services:
   #
   us:
     container_name: datalens-us
-    image: tpz_us:latest
+    image: tpz_us:local
     environment:
       APP_INSTALLATION: opensource
       APP_ENV: prod
@@ -161,7 +161,7 @@ services:
   #
   ui-api:
     container_name: datalens-ui-api
-    image: tpz_ui-api:latest
+    image: tpz_ui:local
     environment:
       APP_MODE: api
       APP_ENV: production
@@ -176,7 +176,7 @@ services:
   #
   meta-manager:
     container_name: datalens-meta-manager
-    image: tpz_meta-manager:latest
+    image: tpz_meta-manager:local
     environment:
       APP_INSTALLATION: opensource
       APP_ENV: prod
@@ -207,7 +207,7 @@ services:
   #
   auth:
     container_name: datalens-auth
-    image: tpz_auth:latest
+    image: tpz_auth:local
     environment:
       APP_INSTALLATION: opensource
       APP_ENV: prod
@@ -235,7 +235,7 @@ services:
   #
   ui:
     container_name: datalens-ui
-    image: tpz_ui:latest
+    image: tpz_ui:local
     environment:
       APP_MODE: full
       APP_ENV: production

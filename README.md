@@ -1,21 +1,28 @@
 # datalens-patch
 ui customize for datalens
 
-- Клонировать datalens-patch
-- Перейти в datalens-patch
+- Клонировать datalens-patch и перейти в папку
+- - git clone https://github.com/t74sten/datalens-patch && cd datalens-patch
 - Клоинровать остальные сервисы datalens в datalens-patch
+- - git clone https://github.com/t74sten/datalens
+- - git clone https://github.com/t74sten/datalens-ui
+- - git clone https://github.com/t74sten/datalens-us
+- - git clone https://github.com/t74sten/datalens-backend
+- - git clone https://github.com/t74sten/datalens-auth
+- - git clone https://github.com/t74sten/datalens-meta-manager
 - Построить образы docker
 - - Build datalens-backend
-  - - ./docker_build/run-project-bake dl_control_api --set "dl_control_api.tags=datalens-control-api:local"
-  - - ./docker_build/run-project-bake dl_data_api --set "dl_data_api.tags=datalens-data-api:local"
+  - - cd datalens-backend && ./docker_build/run-project-bake dl_control_api --set "dl_control_api.tags=datalens-control-api:local" && ./docker_build/run-project-bake dl_data_api --set "dl_data_api.tags=datalens-data-api:local" && cd ..
 - - Build datalens-ui + datalens-ui-api
-  - - docker build -t tpz_ui .
+  - - cd datalens-ui && docker build -t tpz_ui:local . && cd ..
 - - Build datalens-us
-  - - docker build -t tpz_us .
+  - - cd datalens-us && docker build -t tpz_us:local . && cd ..
 - - Build datalens-auth
-  - - docker build -t tpz_auth .
+  - - cd datalens-auth && docker build -t tpz_auth:local . && cd ..
 - - Build datalens-meta-manager
-  - - docker build -t tpz_meta-manager .
+  - - cd datalens-meta-manager && docker build -t tpz_meta-manager:local . && cd ..
+- Запустить сборку
+  - - docker compose up --build -d
 
 
 ## 01. Override assets, logo and styles
