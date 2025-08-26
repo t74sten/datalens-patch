@@ -1,4 +1,23 @@
 services:
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    restart: unless-stopped
+    ports:
+      - "${CLICKHOUSE_HTTP_PORT}:8123"   # HTTP
+      - "${CLICKHOUSE_NATIVE_PORT}:9000" # Native
+    environment:
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
+    volumes:
+      - ch_data:/var/lib/clickhouse
+      - ch_logs:/var/log/clickhouse-server
+    networks:
+      - default
+  
   postgres:
     container_name: datalens-postgres
     image: ghcr.io/datalens-tech/datalens-postgres:16
@@ -276,6 +295,8 @@ services:
 #
 volumes:
   db-postgres:
+  ch_data:
+  ch_logs:
 #
 networks:
   default:
