@@ -3,7 +3,7 @@ ui customize for datalens
 
 - Клонировать datalens-patch и перейти в папку
 - - git clone https://github.com/t74sten/datalens-patch && cd datalens-patch
-- Клоинровать остальные сервисы datalens в datalens-patch
+- Клонировать остальные сервисы datalens в datalens-patch
 - - git clone https://github.com/t74sten/datalens
 - - git clone https://github.com/t74sten/datalens-ui
 - - git clone https://github.com/t74sten/datalens-us
